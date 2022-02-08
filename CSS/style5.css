@@ -1,0 +1,133 @@
+body, html {
+    background-color: #fff;
+    margin: 0;
+    height: auto;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: Tw Cen MT;
+    font-style: normal; }
+
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 150px;
+        border-top: 0.006px solid #fff;
+        background-color: #003147;
+        padding-top: 5%;
+        border-radius: 0 0 80% 80%;
+        flex-direction: column;
+    }
+    .header .title{
+        font-size: 35px;
+        color: #f44336;
+    
+    }
+
+    .header .uline{
+        margin-top: 20px;
+     border-radius: 10%;  
+        width: 60px;
+        border: 3px solid #f44336;
+        height: 4px;
+    }
+    .header .uline div{
+        border: 1px solid #003147;
+    }
+.day{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.day .title{
+    margin-top: 50px;
+    font-size: 50px;
+    color: #003147;
+
+}
+.section{
+    margin: 30px 10%;
+}
+.open_ceremony{
+    width: 100%;
+}
+.open_ceremony .title1{
+    margin-top: 80px;
+    font-size: 30px;
+    color: #82c4ca;
+    margin-bottom: 20px;
+}
+.contain_open{
+    width: 100%;
+
+}
+
+.grid_container{
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: auto 33% auto;
+}
+.grid_container .grid{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid_container .grid img {
+    width: 90%;
+    height: 320px;
+}
+.legend{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 8px;
+}
+.legend .title{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: rgb(43, 38, 38);
+  font-weight: 500;
+  padding-right: 50px ;
+}
+
+.legend .contain{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  color: rgb(37, 32, 107);
+  font-family: Eras Light ITC;
+  padding-right: 20px ;
+}
+
+.mail{
+color: #f44336;
+font-size: 18px;
+display: flex;
+flex-direction: row;
+margin-top: 2.5px;
+}
+
+ .mail .em{
+ margin-left: 7px;
+ color: rgb(78, 78, 122);   
+}
+.baner{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 13px;
+}
+.baner img{
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+}

@@ -1,0 +1,241 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(226, 226, 235);
+    
+}
+html{
+    border-left: 2px solid #003147 ;
+}
+.btn{
+    position: fixed;
+    right: 0px;
+    bottom: 150px;
+}
+.btn i{
+    color: rgb(224, 129, 95);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+
+.search_container{
+    width: 96%;
+    margin: 95px 0 0 1%;
+    padding:1%;
+    /* height: 150px; */
+    background-color: rgb(226, 226, 235);
+    border-radius: 10px;
+    /*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.info{
+    width: 86%;
+    margin: 0% 0 0 5%;    
+    background-color: rgb(219, 226, 226);
+    padding: 1% 2% 0.5% 2%;
+    border-radius: 5px 5px 0 0;
+}
+.target{
+    width: 86%;
+    margin: 0.5% 0 0 5%;    
+    background-color: rgb(197, 199, 198);
+    padding: 1% 2% 0.5% 2%;
+    border-radius: 5px 5px 0 0;   
+
+}
+
+
+.target ul{
+    display: flex;
+    width: 90%;
+    margin: 0% 0 1% 0%;    
+
+}
+
+ul li{
+    list-style: none;
+    padding: 1% 5% 1% 5%;
+    font-size: 30px;
+    font-weight: bold;   
+    transition: all 0.5 ease;
+}
+.target ul li:hover{
+    border-bottom: 2px solid rgb(25, 19, 104);
+    
+}
+a{
+    text-decoration: none;
+    color: rgb(12, 12, 131);
+}
+
+.info_general{
+    position: absolute;
+    top: 200px;
+    right: 100px;
+}
+
+form{
+    width: 86%;
+    margin:0 0 0 5%;
+    padding: 2% 2% 0.5% 2%;
+    background-color: rgba(255, 255, 255,0.9);
+    border-bottom: 1.5px solid rgb(11, 11, 97);   
+    
+}
+
+#search{
+    width: 78%;
+    margin-left: 10%;
+    font-size: 20px;
+    height: 35px;
+    border: 0.5px solid #2c2525;
+    background: rgba(217, 221, 219, 0.3);
+    outline: none;
+    padding-left: 2%;
+}
+
+.selects_participant{
+    width: 100%;
+    padding: 2%;
+    display: flex;
+}
+
+#submit_participant{
+    width: 25%;
+    padding: 1%;
+    margin:0 0 0 37%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #003147;
+    border-radius: 5px;
+    border: none;    
+    outline: none;
+}
+
+.selects_exhibitor{
+    width: 100%;
+    padding: 2%;
+    display: flex;
+}
+.elt{
+    width: 30%;
+    margin-left: 3%;
+}
+
+#submit_exhibitor{
+    width: 50%;
+    padding: 1%;
+    margin:0 0 0 12%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #003147;
+    border-radius: 5px;
+    border: none;    
+    outline: none;
+}
+
+.selects_exhibitor select{
+    width: 100%;
+    margin-left: 15%;
+    font-size: 25px;
+    font-weight: bold;
+    
+    background: none;
+    
+    padding-left: 2%;
+}
+
+.selects_participant select{
+    width: 35.5%;
+    margin-left: 7.5%;
+    font-size: 25px;
+    font-weight: bold;
+    
+    background: none;
+    
+    padding-left: 2%;
+}
+
+input[type='submit']:hover{
+    background-color: palevioletred;
+}
+
+.participants{
+    width: 90%;
+    margin: 0 0% 1% 5% ;  
+    padding: 0 0 2% 0;  
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+    justify-items: auto;
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(219, 226, 226);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rows{
+    width: 100%;
+    display: flex;
+    padding: 1% 1% 0 0;  
+    margin-left: 2%;  
+}
+
+.participant{
+    
+    margin: 1%;
+    padding:1%;
+    background-color: rgba(255, 255, 255,0.9);
+    border-radius: 5px;
+}
+
+.participant .img{
+    display: flex;
+    width: 70%;
+    padding: 2% 0 0 10% ;
+}
+.img img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-right: 6px;
+}
+.img .description{
+    width: 50%; 
+    font-size: 15.5px;   
+}
+
+.more{
+    width: 100%;
+    padding: 0 0 1% 5%;
+    font-size: 15.5px;  
+}
+
+.link{
+    width: 80%;
+    margin: 5%;  
+    padding: 1.5%;  
+    background-color: #113c5f;   
+    text-align: center;
+    border-radius: 5px;
+}
+.link a{
+    color: #fff;
+    width: 100%;
+    height: 30px;
+    margin: 1%;
+    padding:0 10% 2.5% 1%;    
+    text-decoration: none;
+    font-weight: bold;
+}
