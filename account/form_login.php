@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<?php include("nav_insc.php") 
+<?php include("nav_insc.php") ;
 ?>
 
 <div class="left">

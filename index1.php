@@ -30,7 +30,7 @@
 
 			<!--debut des liens de droite-->
 			<div class="droite">
-				<a href="Home.php" id="back_button" > Home</a>
+				<a href="./index.php" id="back_button" > Home</a>
                 <a href="Agenda.php" id="back_button" > Agenda</a>
                 <a href="Meet.php" id="back_button" > Our Speakers</a>
                 <a href="contact.php" id="back_button" > Contact</a>

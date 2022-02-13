@@ -24,8 +24,8 @@
             <a href="Home.php"><img src="./IMG/INNV.jfif" alt="logo SICOM"></a>
         </div>
     </div>
+    
     <div class="about">
-
         <h2>About the Event</h2>
         <p>
             Bringing together Euro-Mediterranean researchers, policy makers, investors, Industry players, Academia, Technology Transfer Offices, SMEs, startups and Entrepreneurs
@@ -39,31 +39,31 @@
     $query_s = mysqli_query($bdd, $sql_select);
     $table = mysqli_fetch_assoc($query_s);
 
-    $current_hours=date('G');
-    $current_minutes=date('i');    
-    $current_date=date('Y-m-d');
+    $current_hours = date('G');
+    $current_minutes = date('i');
+    $current_date = date('Y-m-d');
 
-    $minutes=$table['mtg_starts_m'];
-    $hours=$table['mtg_starts_h'];
-    $days=$table['mtg_date'];
-    $days=$days[8].''.$days[9];
-    $current_date=$current_date[8].''.$current_date[9];    
+    $minutes = $table['mtg_starts_m'];
+    $hours = $table['mtg_starts_h'];
+    $days = $table['mtg_date'];
+    $days = $days[8] . '' . $days[9];
+    $current_date = $current_date[8] . '' . $current_date[9];
 
-    
 
-    if ($minutes <$current_minutes) {
+
+    if ($minutes < $current_minutes) {
         $minutes += 60;
         $hours -= 1;
     }
     if ($hours < $current_hours) {
-        $hours += 24;     
-        $res=1;   
-    }else
-        $res=0;
+        $hours += 24;
+        $res = 1;
+    } else
+        $res = 0;
     ?>
-    <div class="hour" style="visibility: hidden;">    
-    <input type="number" id="res" value="<?php echo $res ?>">
-    <input type="text" id="mtg_date_c" value="<?php echo $current_date ?>">
+    <div class="hour" style="visibility: hidden;">
+        <input type="number" id="res" value="<?php echo $res ?>">
+        <input type="text" id="mtg_date_c" value="<?php echo $current_date ?>">
         <input type="text" id="mtg_date" value="<?php echo $days ?>">
         <input type="number" id="mtg_h" value="<?php echo $hours ?>">
         <input type="number" id="mtg_m" value="<?php echo $minutes ?>">
@@ -138,7 +138,6 @@
                 </ul>
             </div>
         </div>
-
     </div>
     <div class="explore_event">
 
@@ -206,25 +205,25 @@
                 var display = function() {
                     var days = document.getElementById('mtg_date').value,
                         hours = document.getElementById('mtg_h').value,
-                        minutes = document.getElementById('mtg_m').value, 
-                        res = document.getElementById('res').value, 
-                        days_c = document.getElementById('mtg_date_c').value;                       
-                        seconds = 60;
+                        minutes = document.getElementById('mtg_m').value,
+                        res = document.getElementById('res').value,
+                        days_c = document.getElementById('mtg_date_c').value;
+                    seconds = 60;
                     hours = Number(hours);
                     minutes = Number(minutes);
                     today = new Date();
-                    days = Number(days)-Number(days_c)-res;             
+                    days = Number(days) - Number(days_c) - res;
 
                     format = function(elt) {
                         if (elt < 10)
                             return elt = "0" + elt;
                         else
                             return elt;
-                    }                   
+                    }
                     seconds = Number(seconds) - today.getSeconds();
                     minutes = Number(Number(minutes) - today.getMinutes());
                     hours = Number(hours) - today.getHours();
-                    
+
 
                     hoursDiv.innerHTML = format(days) + " : " + format(hours) + " : " + format(minutes) + " : " + format(seconds);
                     setTimeout(display, 1000);
