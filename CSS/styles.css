@@ -10,8 +10,6 @@ body{
   min-height: 100vw;
   overflow: hidden;
   background: #e2e0e7;
-
- 
 }
 
 
@@ -26,6 +24,7 @@ body{
   background: #111014;  
   padding: 6px 14px;
   border-right: 1px solid #003147 ;
+  
 }
 
 .side_bar2{
@@ -57,7 +56,17 @@ body{
   padding: 0.5%;
   width: 250px;                
 }
+.side_bar2 .option {
+  position: relative;
+  margin: 0px 1% 0px 1%;
+  padding:5% .5% 1% .5%;
+  width: 220px;  
+  height: 40px;              
+}
 
+.side_bar2 .option:hover {
+  background-color: rgb(18, 122, 79);
+}
 a{
   text-decoration: none;
   color: #fff;
@@ -80,3 +89,19 @@ a{
 /* .side_bar.active{
   width: 250px;
 } */
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  display: flex;
+}
+
+::-webkit-scrollbar-track {
+  background: #111014;   
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(111, 124, 119);
+}
+
+ 

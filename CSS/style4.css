@@ -20,6 +20,8 @@ body, html {
         border-radius: 0 0 80% 80%;
         flex-direction: column;
     }
+
+    
     .header .title{
         font-size: 35px;
         color: #f44336;
@@ -49,14 +51,14 @@ body, html {
 
 }
 .section{
-    margin: 30px 10%;
+    margin: 30px 10vw;
 }
 .open_ceremony{
     width: 100%;
 }
 .open_ceremony .title1{
     margin-top: 80px;
-    font-size: 30px;
+    font-size: clamp(28px,3vw,30px);
     color: #82c4ca;
     margin-bottom: 20px;
 }
@@ -214,4 +216,141 @@ body, html {
     width: 110px;
     height: 110px;
     border-radius: 100%;
+}
+@media only screen and (max-width: 700px) {
+
+    .grid_container2{
+        width: 90vw;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid_container2 .grid{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8vh;
+    }
+    
+    .grid_container2 .grid img {
+        width: 35vw;
+        height: 35vw;
+        margin-left:15vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid_container2 .legend .title{
+        font-size: clamp(10px,3vw,17px);
+        
+    }
+    .grid_container2 .legend .contain{
+        font-size: clamp(6px,3vw,11px);
+    }
+    
+
+
+
+
+
+
+
+    .grid_container{
+        width: 90vw;
+        height: auto;
+        grid-template-columns: auto auto ;
+    }
+    .grid_container .grid{
+        width: 40vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .grid_container .grid img {
+        width: 30vw;
+        height: 30vw;
+    }
+    .legend{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 25px 8px;
+    }
+    .grid_container .legend .title{
+        font-size: clamp(10px,3vw,17px);
+        margin-bottom: 1vh;
+    }
+    .grid_container .legend .contain{
+        font-size: clamp(6px,2vw,15px);
+    }
+
+
+
+
+
+
+
+
+    .grid_container4{
+        width: 90vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid_container4 .grid{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .grid_container4 .grid img {
+        width: 44vw;
+        height: 44vw;
+        margin-left:15vw;
+    }
+    
+
+
+
+
+
+
+
+    .grid_container3{
+        width: 90vw;
+        height: auto;
+       display: flex;
+    }
+    .grid_container3 .grid{
+        width: 78vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .grid_container3 .grid img {
+        width: 33vw;
+        height: 33vw;
+    }
+  
+    .grid_container3 .legend .title{
+        font-size: clamp(10px,3vw,17px);
+        margin-bottom: 1vh;
+        width: 90%;
+    }
+    .grid_container3 .legend .contain{
+        font-size: clamp(6px,2vw,15px);
+        width: 90%;
+    }
+
+
+  
 }

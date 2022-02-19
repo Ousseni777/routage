@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="../../IMG/fontawesome/css/all.css">
     <link rel="stylesheet" href="../../CSS/members/global.css">
     <title>Speakers</title>
+    <style>
+        @media screen and (max-width:1100px) {
+            body{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .container{                
+                width: 98%;
+                padding: 1%;
+            }
+            .target ul{
+                flex-direction: column;
+            }
+
+        }
+    </style>
 </head>
 
 <body>

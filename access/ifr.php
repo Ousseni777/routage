@@ -7,15 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../IMG/fontawesome/css/all.css">
     <link rel="stylesheet" href="../CSS/styles.css">
-
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"> -->
     <title>innov</title>
 
     <style>
+        body {
+            display: flex;
+            margin-left: 20%;
+            background: #e2e0e7;
+        }
+
+        .profil {
+            width: 98%;
+            margin-right: 0px;
+            padding-right: 15px;
+            height: 80px;
+            float: right;
+            padding-top: 13px;
+            width: 120%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: -20%;
+        }
+
         .prmenu {
             height: 0;
             z-index: 1;
             overflow-x: hidden;
             overflow-y: hidden;
+        }
+
+        @keyframes animB {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            90% {
+                filter: hue-rotate(360deg);
+            }
+
+            270% {
+                filter: hue-rotate(270deg);
+            }
+
+            360% {
+                filter: hue-rotate(360deg);
+            }
         }
 
         .pmenucls {
@@ -52,10 +90,71 @@
             font-size: 36px;
             margin-left: 50px;
         }
+
+        @media only screen and (max-width: 1100px) {
+            body {
+                /* display: flex; */
+                margin-left: 0%;
+                background: #e2e0e7;
+            }
+
+            .side_bar {
+                width: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu,
+            .toogle {
+                visibility: hidden;
+            }
+
+            .mnbton {
+                cursor: pointer;
+                position: absolute;
+                color: #35e6fd;
+                right: 50px;
+                border: 0;
+            }
+
+            #open {
+                top: 10px;
+                font-size: 35px;
+            }
+
+            #close {
+                visibility: hidden;
+                position: relative;
+                float: right;
+                margin-right: 10px;
+                color: #35e6fd;
+                z-index: 9999;
+                font-size: 55px;
+            }
+
+            .profil {
+                background-color: #003147;
+            }
+
+            .identifiant {
+                cursor: pointer;
+                position: absolute;
+                color: #15e6fd;
+                top: 20px;
+                right: 10px;
+                border: 0;
+                font-size: 25px;
+            }
+
+            .name_firstname {
+                visibility: hidden;
+            }
+
+        }
     </style>
 </head>
 
-<body style="display: flex; margin-left: 20%;background: #e2e0e7;">
+<body>
     <?php
     session_start();
     if (!$_SESSION['email']) {
@@ -73,30 +172,32 @@
 
 
     ?>
-    <div class="side_bar" style="z-index: 1;">
+
+    <div class="side_bar" onmouseout="closeMenu()" id="side_bar_id" style="z-index: 1;">
         <div id="toogle" class="toogle"><i id="icon_toogle" class="fas fa-toggle-off fa-3x"></i></div>
+        <span class="mnbton_close" id="close" onclick="closeMenu()">&times;</span>
         <div class="menu">
-            <div class="option"><a href="./home_a.php" target="tg"><i class="fas fa-home fa-1x" id="i1"></i></i><span style="color: #fff;">Home</span></a></div>
-            <div class="option"><a href=""><i class="far fa-calendar-alt fa-1x" id="i2"></i><span>Agenda</span></a></div>
-            <div class="option"><a href=""><i class="fas fa-desktop fa-1x" id="i3"></i><span>Conference Room</span></a></div>
-            <div class="option"><a href=""><i class="fas fa-laptop-medical fa-1x" id="i4"></i><span>Exhibitor Show</span></a></div>
-            <div class="option"><a href="../wef_nexus_Exhibition.php" target="tg"><i class="fas fa-laptop-house fa-1x" id="i5"></i><span>WEF Exhibition</span></a></div>
-            <div class="option"><a href="../wef_fair_innovation.php" target="tg"><i class="fas fa-laptop-house fa-1x" id="i6"></i><span>WEF Innov Fair</span></a></div>
-            <div class="option"><a href="./members/speaker.php" target="tg"><i class="fas fa-users fa-1x" id="i7"></i><span>Participants</span></a></div>
-            <div class="option"><a href=""><i class="fas fa-users-cog fa-1x" id="i8"></i><span>Networking</span></a></div>
-            <div class="option"><a href="http://localhost/myProject/Innovation/nexus_brokerage.php" target="tg" class="anm"><i class="fas fa-users-cog fa-1x" id="i9"></i><span>NEXUS Brokerage</span></a></div>
-            <div class="option"><a href="javascript:void(0)" target="tg"><i class="fas fa-user fa-1x" id="i10" onclick="openNav()"></i><span><span onclick="openNav()">My Profil Config</span> <span style="font-size:25px;cursor:pointer; margin-left: 18px;text-align: center;" onclick="closeNav()">&times;</span></span></a></div>
+            <div class="option"><a href="./home_a.php" target="tg"><i class="options fas fa-home fa-1x" id="i1"></i></i><span style="color: #fff;">Home</span></a></div>
+            <div class="option"><a href=""><i class="options far fa-calendar-alt fa-1x" id="i2"></i><span>Agenda</span></a></div>
+            <div class="option"><a href=""><i class="options fas fa-desktop fa-1x" id="i3"></i><span>Conference Room</span></a></div>
+            <div class="option"><a href=""><i class="options fas fa-laptop-medical fa-1x" id="i4"></i><span>Exhibitor Show</span></a></div>
+            <div class="option"><a href="../wef_nexus_Exhibition.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i5"></i><span>WEF Exhibition</span></a></div>
+            <div class="option"><a href="../wef_fair_innovation.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i6"></i><span>WEF Innov Fair</span></a></div>
+            <div class="option"><a href="./members/speaker.php" target="tg"><i class="options fas fa-users fa-1x" id="i7"></i><span>Participants</span></a></div>
+            <div class="option"><a href=""><i class="options fas fa-users-cog fa-1x" id="i8"></i><span>Networking</span></a></div>
+            <div class="option"><a href="http://localhost/myProject/Innovation/nexus_brokerage.php" target="tg" class="anm"><i class="options fas fa-users-cog fa-1x" id="i9"></i><span>NEXUS Brokerage</span></a></div>
+            <div class="option"><a href="javascript:void(0)" target="tg"><i class="options fas fa-user fa-1x" id="i10" onclick="openNav()"></i><span><span onclick="openNav()">My Profil Config</span> <span style="font-size:25px;cursor:pointer; margin-left: 18px;text-align: center;" onclick="closeNav()">&times;</span></span></a></div>
             <div class="prmenu" id="pmenu">
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/primary_information.php" target="tg"><i class="fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Primary information</span></a></div>
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/further_information.php" target="tg"><i class="fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Further information</span></a></div>
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/password.php" target="tg"><i class="fas fa-user fa-1x" id="i10D" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Password</span></a></div>
+                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/primary_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Primary information</span></a></div>
+                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/further_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Further information</span></a></div>
+                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/password.php" target="tg"><i class="options fas fa-user fa-1x" id="i10D" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Password</span></a></div>
             </div>
-            <div class="option"><a href="" target="tg"><i class="fas fa-star fa-1x" id="i11"></i><span>My Visit</span></a></div>
-            <div class="option"><a href="" target="tg"><i class="fas fa-question-circle fa-1x" id="i12"></i><span>How It works ?</span></a></div>
-            <div class="option"><a href="" target="tg"><i class="fas fa-guilded fa-1x" id="i13"></i><span>User guides</span></a></div>
-            <div class="option"><a href="" target="tg"><i class="fas fa-paper-plane fa-1x" id="i14"></i><span>Contact Us</span></a></div>
-            <div class="option"><a target="tg" href="../access/zoom/CDN/setting.php" target="page"><i class="fas fa-desktop fa-1x" id="i15"></i><span>Set Meeting</span></a></div>
-            <div class="option"><a id="logout" href="http://localhost/myProject/Innovation/account/form_login.php"><i class="fas fa-sign-out-alt fa-1x" id="i16"></i><span>Logout</span></a></div>
+            <div class="option"><a href="" target="tg"><i class="options fas fa-star fa-1x" id="i11"></i><span>My Visit</span></a></div>
+            <div class="option"><a href="" target="tg"><i class="options fas fa-question-circle fa-1x" id="i12"></i><span>How It works ?</span></a></div>
+            <div class="option"><a href="" target="tg"><i class="options fas fa-guilded fa-1x" id="i13"></i><span>User guides</span></a></div>
+            <div class="option"><a href="" target="tg"><i class="options fas fa-paper-plane fa-1x" id="i14"></i><span>Contact Us</span></a></div>
+            <div class="option"><a target="tg" href="../access/zoom/CDN/setting.php" target="page"><i class="options fas fa-desktop fa-1x" id="i15"></i><span>Set Meeting</span></a></div>
+            <div class="option"><a id="logout" href="http://localhost/myProject/Innovation/account/form_login.php"><i class="options fas fa-sign-out-alt fa-1x" id="i16"></i><span>Logout</span></a></div>
         </div>
     </div>
     <div style="width: 100%; background-color: #e2e0e7;" id="ifr">
@@ -111,11 +212,15 @@
             <a href="#"></a>
             <a href="#"></a>
         </div>
-        <div class="profil" id="pf" style="width: 100%;margin-right: 0px;padding-right: 15px ;height: 80px;float: right;padding-top: 13px;width: 120%; background-color: #fff; position: absolute; top: 0; left: -20%;">
-            <span style="float: right;"><a href="#" style="width: 60px;font-size: 35px;background-color:  #113c5f;padding: 8px;margin-right: 3px;cursor:pointer;" onclick="openPr()"><?php echo "$p" . "$n"; ?></a><?php echo "$prenom" . " " . "$nom"; ?><span style="font-size: 18px;"> </span></span>
 
+        <div class="profil" id="pf">
+            <span class="mnbton" id="open" onclick="openMenu()">&#9776;</span>
+            
+            <span class="identifiant" onclick="openPr()"><i class="options fas fa-user fa-1x" id="i10" onclick="openNav()"></i></span>
+            <span class="name_firstname" style="float: right;"><a href="#" style="width: 60px;font-size: 35px;background-color:  #113c5f;padding: 8px;margin-right: 3px;cursor:pointer;   animation-name: animB;animation-duration: 4s;animation-iteration-count: infinite;animation-timing-function: linear;" onclick="openPr()"><?php echo "$p" . "$n"; ?></a><?php echo "$prenom" . " " . "$nom"; ?><span style="font-size: 18px;"> </span></span>
         </div>
-        <iframe src="./home_a.php" name="tg" height="98%" width="100%" style=" border: 0;background-color: #e2e0e7; " title=""></iframe>
+
+        <iframe src="./home_a.php" name="tg" width="100%" style=" border: 0;background-color: #e2e0e7;height: 100vh; " title=""></iframe>
     </div>
 
     <script>
@@ -141,193 +246,48 @@
         let toogle = document.getElementById('toogle');
         let icon = document.getElementById("icon_toogle");
         let side_bar = document.querySelector('.side_bar');
-        let side1 = document.getElementById('i1');
-        let side2 = document.getElementById('i2');
-        let side3 = document.getElementById('i3');
-        let side4 = document.getElementById('i4');
-        let side5 = document.getElementById('i5');
-        let side6 = document.getElementById('i6');
-        let side7 = document.getElementById('i7');
-        let side8 = document.getElementById('i8');
-        let side9 = document.getElementById('i9');
-        let side10 = document.getElementById('i10');
-        let side11 = document.getElementById('i11');
-        let side12 = document.getElementById('i12');
-        let side13 = document.getElementById('i13');
-        let side14 = document.getElementById('i14');
-        let side15 = document.getElementById('i15');
-        let side16 = document.getElementById('i16');
         let menu = document.querySelector('.menu');
+        let options = document.querySelectorAll('.options');
+        let option = document.querySelectorAll('.option');
         let ifr = document.getElementById('ifr');
-        var glo = 0;
 
-        side1.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
+        for (let i = 0; i < option.length; i++) {
+            options[i].onmouseover = function() {
+                icon.style.color = 'white';
+                icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
+                side_bar.classList.replace('side_bar', 'side_bar2');
 
+            }
         }
-        side2.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-        side3.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
+        for (let i = 0; i < option.length; i++) {
+            option[i].onclick = function() {
+                closeMenu();
+            }
         }
 
-        side4.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side5.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side6.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side7.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side8.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-
-        side9.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side10.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side11.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side12.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-        side13.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-        side14.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-        side15.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-        side16.onmouseover = function() {
-            // side_bar.classList.toggle('active');
-
-
-
-            icon.style.color = 'white';
-            icon.classList.replace('fa-toggle-off', 'fa-toggle-on');
-            side_bar.classList.replace('side_bar', 'side_bar2');
-
-        }
-
-
-
-
-        //FERMETURE
         ifr.onmouseover = function() {
             icon.classList.replace('fa-toggle-on', 'fa-toggle-off');
             side_bar.classList.replace('side_bar2', 'side_bar');
             document.getElementById("pmenu").style.width = "auto";
             document.getElementById("pmenu").style.height = "0";
 
+        }
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            document.getElementById("side_bar_id").style.width = "200px";
+            // toogle.style.visibility='visible';
+            document.getElementById('open').style.visibility = 'hidden';
+            document.getElementById('close').style.visibility = 'visible';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            document.getElementById("side_bar_id").style.width = "0px";
+            // toogle.style.visibility='hidden';
+            
+            document.getElementById('close').style.visibility = 'hidden';
+            document.getElementById('open').style.visibility = 'visible';
         }
     </script>
 </body>
