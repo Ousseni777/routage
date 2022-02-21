@@ -46,6 +46,9 @@
 		}
 
 		function closeMenu() {
+			// if(document.getElementById("menuid").style.width == "60%"){
+
+			// }
 			document.getElementById("menuid").style.width = "0px";
 			
 		}

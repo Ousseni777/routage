@@ -1,31 +1,37 @@
 body{
     margin: 0;
-    padding: 0;
+    padding: 0 0 10% 0;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    background-color: rgb(226, 226, 235);
+    background-color: rgb(234, 234, 248);
     
 }
-.btn{
-    position: fixed;
-    right: 0px;
-    bottom: 150px;
-}
-.btn i{
-    color: rgb(224, 129, 95);
+
+.nbr{
+    visibility: hidden;
 }
 
-.btn:hover{
+.btn{
+    position: fixed;
+    visibility: hidden;
+    right: 0;
+    top: 40%;
+}
+.btn i{
+    color: rgb(233, 161, 134);
+}
+
+.btn i:hover{
     cursor: pointer;
+    color: rgb(224, 129, 95);    
 }
 
 
 .container{
     width: 96%;
-    margin: 95px 0 0 1%;
-    padding:1%;
-    /* height: 150px; */
-    background-color: rgb(248, 11, 11);
+    margin: 95px 0 50% 1%;    
+    padding:1% 1% 10% 1%;    
+    background-color: rgb(226, 226, 235);
     border-radius: 10px;
     /*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
@@ -79,12 +85,11 @@ a{
 }
 
 form{
-    width: 86%;
+    width: 86%;    
     margin:0 0 0 5%;
     padding: 2% 2% 0.5% 2%;
     background-color: rgba(255, 255, 255,0.9);
-    border-bottom: 1.5px solid rgb(11, 11, 97);   
-    
+    border-bottom: 1.5px solid rgb(11, 11, 97);       
 }
 
 #search{
@@ -102,6 +107,7 @@ form{
     width: 100%;
     padding: 2%;
     display: flex;
+    
 }
 
 #submit_participant{
@@ -167,7 +173,8 @@ input[type='submit']:hover{
 }
 
 .participants{
-    width: 90%;
+    width: 90%; 
+    height: 100%;      
     margin: 0 0% 1% 5% ;  
     padding: 0 0 2% 0;  
     display: flex;
@@ -189,7 +196,7 @@ input[type='submit']:hover{
 }
 
 .participant{
-    
+    width: 280px;
     margin: 1%;
     padding:1%;
     background-color: rgba(255, 255, 255,0.9);
@@ -198,12 +205,12 @@ input[type='submit']:hover{
 
 .participant .img{
     display: flex;
-    width: 70%;
+    width: 80%;
     padding: 2% 0 0 10% ;
 }
 .img img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
     border-radius: 8px;
     margin-right: 6px;
@@ -235,4 +242,106 @@ input[type='submit']:hover{
     padding:0 10% 2.5% 1%;    
     text-decoration: none;
     font-weight: bold;
+}
+
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: #003147;
+    }
+
+    .container {
+        width: 90%;
+        margin: 100px 0%;
+        padding: 0%;
+        background-color: #003147;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .target ul {
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .target ul li {
+        width: 90%;
+        margin: 5px 15% 0px 0%;
+        padding: 4px 0;
+        background-color: #003147;
+        border-radius: 5px;
+        text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .target ul li a{
+        color: white;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        
+    }
+
+    
+    .info{                
+        display: flex;
+        flex-direction: column;  
+        justify-content: center;              
+        align-items: center;
+    }
+    .info .span{
+        width: 80%;
+        position: static;
+        text-align: center;
+    }
+    .info_general{
+        background-color: gray;
+        padding: 2% 0;
+        opacity: 0.5;
+    }
+    .search {
+        width: 90%;        
+    }
+
+    .search select {
+        width: 40%;
+        font-size: 15px;
+        margin: auto;
+        padding: 1%;
+    }
+    .selects_exhibitor{
+        display: flex;
+        flex-direction: column;
+    }
+    .selects_exhibitor .elt{
+        width: 60%;
+        margin-left: 5%;
+    }
+    #submit_exhibitor{
+        width: 100%;
+        background-color: rebeccapurple;
+    }
+    .selects_exhibitor .elt select{
+        width: 100%;        
+    }
+    #submit_participant {
+        width: 50%;
+        margin-left: 25%;
+        background-color: rebeccapurple;
+    }
+
+    .selects_participant {
+        width: 86%;
+        padding: 2%;
+        display: flex;
+    }
 }

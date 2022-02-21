@@ -19,7 +19,7 @@
         <div class="gauche">
             <img src="IMG/innovlogo.jfif">
         </div>
-        <span class="mnbton" onmouseout="closeMenu()" onclick="openMenu()">&#9776;</span>
+        <span class="mnbton"  onclick="openMenu()">&#9776;</span>
         <div class="droite" id="menuid">
             <span href="javascript:void(0)" class="mnbton" onclick="closeMenu()" id="back_button" style="position: absolute;position: absolute; right: 5vw; top: 5vh;border: 0;cursor:pointer;">&times;</span>
             <a href="./account/form_login.php" class="teacher">Login</a>

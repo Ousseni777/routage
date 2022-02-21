@@ -12,17 +12,24 @@
             background-color: #e2e0e7;
             border-left: 2px solid #003147;
         }
+
+        .header {
+            height: 400px;
+            background-color: #e2e0e7;
+            margin-bottom: 0%;
+        }
+
         @media screen and (max-width: 1100px) {
-            body {            
-            border-left: 0;
-        } 
+            body {
+                border-left: 0;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="header" style="height: 400px; background-color:  #e2e0e7;margin-bottom: 0%;">
+    <div class="header">
 
         <div class="text">
             <h1 class="id_h1">Don't miss the WEF NEXUS Virtual Innovation Week !</h1>
@@ -127,7 +134,7 @@
                     letter.classList.add('letter');
                     letter.style.opacity = '0';
                     letter.style.animation = 'anim 5s ease forwards';
-                    letter.textContent = array[wordIndex][letterIndex];                    
+                    letter.textContent = array[wordIndex][letterIndex];
                     setTimeout(() => {
                         letter.remove();
                     }, 2000)

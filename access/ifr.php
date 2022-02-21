@@ -37,6 +37,9 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
+        .mnbton, .identifiant{
+            visibility: hidden;
+        }
 
         @keyframes animB {
             0% {
@@ -110,6 +113,7 @@
             }
 
             .mnbton {
+                visibility: visible;
                 cursor: pointer;
                 position: absolute;
                 color: #35e6fd;
@@ -137,6 +141,7 @@
             }
 
             .identifiant {
+                visibility: visible;
                 cursor: pointer;
                 position: absolute;
                 color: #15e6fd;
@@ -173,11 +178,11 @@
 
     ?>
 
-    <div class="side_bar" onmouseout="closeMenu()" id="side_bar_id" style="z-index: 1;">
+    <div class="side_bar" id="side_bar_id" style="z-index: 1;">
         <div id="toogle" class="toogle"><i id="icon_toogle" class="fas fa-toggle-off fa-3x"></i></div>
         <span class="mnbton_close" id="close" onclick="closeMenu()">&times;</span>
         <div class="menu">
-            <div class="option"><a href="./home_a.php" target="tg"><i class="options fas fa-home fa-1x" id="i1"></i></i><span style="color: #fff;">Home</span></a></div>
+            <div class="option"><a href="./home_a.php" target="tg"><i class="options fas fa-home fa-1x" id="i1"></i></i><span   >Home</span></a></div>
             <div class="option"><a href=""><i class="options far fa-calendar-alt fa-1x" id="i2"></i><span>Agenda</span></a></div>
             <div class="option"><a href=""><i class="options fas fa-desktop fa-1x" id="i3"></i><span>Conference Room</span></a></div>
             <div class="option"><a href=""><i class="options fas fa-laptop-medical fa-1x" id="i4"></i><span>Exhibitor Show</span></a></div>
@@ -261,7 +266,9 @@
         }
         for (let i = 0; i < option.length; i++) {
             option[i].onclick = function() {
-                closeMenu();
+                if(document.getElementById('side_bar_id').style.width=='200px'){
+                    closeMenu();
+                }
             }
         }
 
