@@ -78,3 +78,5 @@
 22/02/14 01:09:10 : Socket Error # 11001<EOL>Host not found.
 22/02/14 01:09:11 : Socket Error # 11001<EOL>Host not found.
 22/02/15 02:09:07 : Socket Error # 10054<EOL>Connection reset by peer.
+22/02/22 16:53:58 : SSL is not available on this server.
+22/02/22 16:54:15 : Connect timed out.
