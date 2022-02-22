@@ -52,7 +52,7 @@
         <p>Over four days, WEF NEXUS innovation week will stream a regional conference, workshops, discussion panels and expert roundtables, followed by B2B matchmaking sessions to help you connect with relevant peers and stakeholders in Europe and the MENA region</p><br>
     </div>
     <?php
-    $bdd = mysqli_connect('localhost', 'root', '', 'sicom_innovation') or die(mysqli_error($bdd));
+    include('./account/connectToDB.php');
 
     $yesterday = date('Y') . '-' . date('m') . '-' . (intval(date('d')) - 1);
     $sql_delete = "DELETE FROM `infos` WHERE mtg_date <= '$yesterday'";

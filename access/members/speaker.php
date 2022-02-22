@@ -35,20 +35,33 @@
         .target_li a {
             color: white;
         }
+
+        .online {
+            width: 10px;
+            height: 10px;
+            margin: 0 2% 0 0;
+            background-color: rgb(12, 240, 31);
+            border-radius: 50%;
+        }
+
+        .offline {
+            width: 10px;
+            height: 10px;
+            margin: 0 2% 0 0;
+            background-color: gray;
+            border-radius: 50%;
+        }
     </style>
 
 </head>
 
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "sicom_innovation";
-    $bd = mysqli_connect($servername, $username, $password, $dbname);
+    include('../../account/connectToDB.php');
 
     $sql = "SELECT * FROM `person` WHERE type_pers='Media'";
-    $queru_sql = mysqli_query($bd, $sql);
+    $queru_sql = mysqli_query($bdd, $sql);
+    include('../set_offline.php');
     $len = 0;
     ?>
     <span class="btn"><i class="fas fa-arrow-circle-up fa-3x"></i></span>
@@ -88,6 +101,17 @@
             <?php while ($table = mysqli_fetch_assoc($queru_sql)) {
                 $len++; ?>
                 <div class="participant">
+                    <?php
+
+                    $email = $table['email'];
+                    $sql = "SELECT * FROM online WHERE email LIKE '$email'";
+                    $request = mysqli_query($bdd, $sql);
+                    $table_sql = mysqli_fetch_assoc($request);
+                    if ($table_sql['status'] == 'on')
+                        echo '<div class="online"></div>';
+                    else
+                        echo '<div class="offline"></div>';
+                    ?>
                     <div class="img">
                         <img class="profil" src="http://localhost/myProject/Innovation/IMG/part3.jpg" alt="profil">
                         <div class="description">

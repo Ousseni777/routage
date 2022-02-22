@@ -12,9 +12,7 @@
 
 <body>
     <?php include("nav_insc.php");
-    ?>
-    <?php $tp = ' ';
-    $a = ' '; ?>
+    ?>    
     <div class="container" id="register">
             <div class="welcome">
                 <h1>Welcome to Water, Energy, Food NEXUS Innovation Week « Paving the Way Towards Entrepreneurship </h1>
@@ -144,6 +142,7 @@
                     <span>Already have an account ? <a href="./form_login.php">Login</a></span>
                 </div>
                 <?php
+                $a = $_GET['nm'];
                 if ($a == 'L1') $tp = 'Participant';
                 if ($a == 'L2') $tp = 'Media';
                 if ($a == 'L3') $tp = 'Exhibitor';

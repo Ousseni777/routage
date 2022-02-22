@@ -93,6 +93,7 @@
             font-size: 36px;
             margin-left: 50px;
         }
+        
 
         @media only screen and (max-width: 1100px) {
             body {
@@ -105,11 +106,12 @@
                 width: 0;
                 margin: 0;
                 padding: 0;
-            }
+            }            
 
             .menu,
             .toogle {
                 visibility: hidden;
+                
             }
 
             .mnbton {
@@ -135,6 +137,7 @@
                 z-index: 9999;
                 font-size: 55px;
             }
+            
 
             .profil {
                 background-color: #003147;
@@ -154,6 +157,11 @@
             .name_firstname {
                 visibility: hidden;
             }
+            ::-webkit-scrollbar {
+  width: 0px;
+height: 0px;
+  
+}
 
         }
     </style>
@@ -162,12 +170,17 @@
 <body>
     <?php
     session_start();
-    if (!$_SESSION['email']) {
+    if (!isset($_SESSION['email'])) {
         header("Location: ../account/form_login.php");
     }
-    $email = ($_SESSION['email']);
-    $bdd = mysqli_connect('localhost', 'root', '', 'sicom_innovation');
+    
+    include('../account/connectToDB.php');
+    $email = $_SESSION['email'];
 
+    include('./set_online.php');
+    if(isset($request_login)){
+        header('location:../account/form_login.php');
+    }
     $sql = "SELECT * FROM `person` WHERE email='$email'";
     $resultat_sql = mysqli_query($bdd, $sql);
 
@@ -186,23 +199,23 @@
             <div class="option"><a href=""><i class="options far fa-calendar-alt fa-1x" id="i2"></i><span>Agenda</span></a></div>
             <div class="option"><a href=""><i class="options fas fa-desktop fa-1x" id="i3"></i><span>Conference Room</span></a></div>
             <div class="option"><a href=""><i class="options fas fa-laptop-medical fa-1x" id="i4"></i><span>Exhibitor Show</span></a></div>
-            <div class="option"><a href="../wef_nexus_Exhibition.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i5"></i><span>WEF Exhibition</span></a></div>
-            <div class="option"><a href="../wef_fair_innovation.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i6"></i><span>WEF Innov Fair</span></a></div>
+            <div class="option"><a href="./wef_nexus_Exhibition.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i5"></i><span>WEF Exhibition</span></a></div>
+            <div class="option"><a href="./wef_fair_innovation.php" target="tg"><i class="options fas fa-laptop-house fa-1x" id="i6"></i><span>WEF Innov Fair</span></a></div>
             <div class="option"><a href="./members/speaker.php" target="tg"><i class="options fas fa-users fa-1x" id="i7"></i><span>Participants</span></a></div>
             <div class="option"><a href=""><i class="options fas fa-users-cog fa-1x" id="i8"></i><span>Networking</span></a></div>
-            <div class="option"><a href="http://localhost/myProject/Innovation/nexus_brokerage.php" target="tg" class="anm"><i class="options fas fa-users-cog fa-1x" id="i9"></i><span>NEXUS Brokerage</span></a></div>
+            <div class="option"><a href="./nexus_brokerage.php" target="tg" class="anm"><i class="options fas fa-users-cog fa-1x" id="i9"></i><span>NEXUS Brokerage</span></a></div>
             <div class="option"><a href="javascript:void(0)" target="tg"><i class="options fas fa-user fa-1x" id="i10" onclick="openNav()"></i><span><span onclick="openNav()">My Profil Config</span> <span style="font-size:25px;cursor:pointer; margin-left: 18px;text-align: center;" onclick="closeNav()">&times;</span></span></a></div>
             <div class="prmenu" id="pmenu">
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/primary_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Primary information</span></a></div>
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/further_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Further information</span></a></div>
-                <div class="option"><a href="http://localhost/myProject/Innovation/access/members/PROFIL/password.php" target="tg"><i class="options fas fa-user fa-1x" id="i10D" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Password</span></a></div>
+                <div class="option"><a href="./members/PROFIL/primary_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Primary information</span></a></div>
+                <div class="option"><a href="./members/PROFIL/further_information.php" target="tg"><i class="options fas fa-user fa-1x" id="i10N" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Further information</span></a></div>
+                <div class="option"><a href="./members/PROFIL/password.php" target="tg"><i class="options fas fa-user fa-1x" id="i10D" style="color: #111014;"></i><span style="color:rgb(223, 200, 200) ;">Password</span></a></div>
             </div>
             <div class="option"><a href="" target="tg"><i class="options fas fa-star fa-1x" id="i11"></i><span>My Visit</span></a></div>
             <div class="option"><a href="" target="tg"><i class="options fas fa-question-circle fa-1x" id="i12"></i><span>How It works ?</span></a></div>
             <div class="option"><a href="" target="tg"><i class="options fas fa-guilded fa-1x" id="i13"></i><span>User guides</span></a></div>
             <div class="option"><a href="" target="tg"><i class="options fas fa-paper-plane fa-1x" id="i14"></i><span>Contact Us</span></a></div>
-            <div class="option"><a target="tg" href="../access/zoom/CDN/setting.php" target="page"><i class="options fas fa-desktop fa-1x" id="i15"></i><span>Set Meeting</span></a></div>
-            <div class="option"><a id="logout" href="http://localhost/myProject/Innovation/account/form_login.php"><i class="options fas fa-sign-out-alt fa-1x" id="i16"></i><span>Logout</span></a></div>
+            <div class="option"><a target="tg" href="./zoom/CDN/setting.php" target="page"><i class="options fas fa-desktop fa-1x" id="i15"></i><span>Set Meeting</span></a></div>
+            <div class="option"><a id="logout" href="./logout.php"><i class="options fas fa-sign-out-alt fa-1x" id="i16"></i><span>Logout</span></a></div>
         </div>
     </div>
     <div style="width: 100%; background-color: #e2e0e7;" id="ifr">
@@ -266,7 +279,7 @@
         }
         for (let i = 0; i < option.length; i++) {
             option[i].onclick = function() {
-                if(document.getElementById('side_bar_id').style.width=='200px'){
+                if(document.getElementById('side_bar_id').style.width=='300px'){
                     closeMenu();
                 }
             }
@@ -282,7 +295,10 @@
 
         function openMenu() {
             menu.style.visibility = 'visible';
-            document.getElementById("side_bar_id").style.width = "200px";
+            document.getElementById("side_bar_id").style.width = "300px";            
+            document.getElementById("side_bar_id").style.overflow= "scroll";
+            document.getElementById("side_bar_id").style.height="500px";
+            document.getElementById("side_bar_id").style.borderRadius="0 0 10% 0";
             // toogle.style.visibility='visible';
             document.getElementById('open').style.visibility = 'hidden';
             document.getElementById('close').style.visibility = 'visible';

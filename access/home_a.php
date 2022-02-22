@@ -23,6 +23,24 @@
             body {
                 border-left: 0;
             }
+
+            .hours {
+                font-size: 40px;
+                /* height: 60px; */
+                font-weight: 700;
+                margin-top: 20px;
+                margin-left: 1%;
+                padding: 1%;
+                padding-top: 15px;
+                width: 96%;
+            }
+
+            .label {
+                font-size: 14px;
+                width: 96%;
+                padding: 2% 0;
+                margin: 0;
+            }
         }
     </style>
 </head>
@@ -40,7 +58,28 @@
 
     </div>
     <?php
-    $bdd = mysqli_connect('localhost', 'root', '', 'sicom_innovation') or die(mysqli_error($bdd));
+    session_start();
+    
+
+    include('../account/connectToDB.php');
+ 
+    // $sql = "SELECT * FROM online WHERE 1";
+    // $request = mysqli_query($bdd, $sql);
+    include('./set_online.php');
+    if(isset($request_login)){
+        header('location:../account/form_login.php');
+    }
+    // $session_times = 5*60;
+    // $current_times = date('U');
+    // $session_delete_time = $current_times - $session_times;
+
+    // while($table_sql=mysqli_fetch_assoc($request)){
+    //     $email=$table_sql['email'];
+    //     if($table_sql['times']<$session_delete_time ){
+    //         $sql_delete = "DELETE FROM online WHERE email LIKE '$email'";
+    //         mysqli_query($bdd, $sql_delete);
+    //     }
+    // }
 
     $yesterday = date('Y') . '-' . date('m') . '-' . (intval(date('d')) - 1);
     $sql_delete = "DELETE FROM `infos` WHERE mtg_date <= '$yesterday'";

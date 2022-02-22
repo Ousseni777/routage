@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="../../CSS/members/profil_m.css">
     <title>Document</title>
     <style>
+        .image{
+            border-radius: 20px;
+        }
+        .substr {
+                text-align: center;
+                font-size: 60px;
+                color: white;
+                
+            }
         @media screen and (max-width:800px) {
             .bottom {
                 display: flex;
@@ -50,7 +59,7 @@
             width: 10px;
             height: 10px;
             margin: 0 2% 0 0;
-            background-color: green;            
+            background-color: rgb(12, 240, 31);            
             border-radius: 50%;
         } 
         .offline{
@@ -65,24 +74,31 @@
 
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "sicom_innovation";
-    $bd = mysqli_connect($servername, $username, $password, $dbname);
+    session_start();
+    include('../../account/connectToDB.php');
+    
     $id = $_GET['id'];
-
+    
     $sql = "SELECT * FROM `person` WHERE id_pers=$id";
-    $queru_sql = mysqli_query($bd, $sql);
-    $table = mysqli_fetch_assoc($queru_sql);
+    $queru_sql = mysqli_query($bdd, $sql);
+    $table = mysqli_fetch_assoc($queru_sql);    
+
+    include('../set_offline.php');    
+    $email=$table['email'];
+    $sql = "SELECT * FROM online WHERE email LIKE '$email'";
+    $request = mysqli_query($bdd, $sql);
+    $table_sql=mysqli_fetch_assoc($request);
+   
     ?>
     <div class="identifiant">
-
         <div class="name_member">
-        <div class="online"></div>
+        <?php if($table_sql['status']=='on') 
+            echo '<div class="online"></div>';
+        else
+            echo '<div class="offline"></div>';
+        ?>
             <i class="fas fa-user fa-1x"></i>
-            <span>Participant file: <?php echo $table['first_name'] . ' ' . $table['last_name'] ?></span>
-            
+            <span style="width: 100%;">Participant file: <?php echo $table['first_name'] . ' ' . $table['last_name'] ?></span>            
             
         </div>
     </div>

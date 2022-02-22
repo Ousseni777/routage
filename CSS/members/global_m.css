@@ -345,3 +345,18 @@ input[type='submit']:hover{
         display: flex;
     }
 }
+
+.online{
+    width: 10px;
+    height: 10px;
+    margin: 0 2% 0 0;
+    background-color: rgb(12, 240, 31);            
+    border-radius: 50%;
+} 
+.offline{
+    width: 10px;
+    height: 10px;
+    margin: 0 2% 0 0;            
+    background-color: gray;
+    border-radius: 50%;
+}   
