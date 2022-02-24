@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.containt {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid blue;
+}
+
+.icon {
+    align-items: center;   
+    width: 10%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav {
+    display: flex;    
+    width: 100%;  
+    padding: 0; 
+    margin: 0;
+    /* padding-left: 10%;  */
+    
+}
+
+.nav li{
+    width: 25%;
+    margin: 0;
+    text-align: center;        
+    background-color: rgb(240, 208, 186);
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid blue;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.nav li a{   
+    width: 100%;
+    
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;        
+    text-decoration: none;
+    
+}
+
+.nav li a span, .nav li a i{
+    /* padding: 10% 1%;            */
+}
+
+.nav li:hover{
+    cursor: pointer;    
+    background-color: beige;
+    
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: brown;
+}

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*********************************************************
+                    HEADER
+********************************************************/
+header {
+    box-shadow: 0 5px 5px #e7e3e3;
+    width: 90%;
+}
+
+header .profile {
+    display: flex;
+    justify-content: right;
+    border-bottom: 1px solid #AEAEAE;
+}
+
+header .title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+header div img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+}
+
+header .fa {
+    margin: 20px;
+    color: #AEAEAE;
+}
+
+/*********************************************************
+                    FORM
+********************************************************/
+section {
+    padding: 40px;
+    background-color: #EEF0F8;
+}
+
+section .bloc-form {
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    font-size: 0.9em;
+    border-radius: 5px;
+    
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #EEF0F8;
+}
+
+.bloc-form div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.bloc-form div p {
+    display: block;
+    
+}
+form{
+    width: 100%;
+}
+
+.bloc-form form table{
+    width: 100%;    
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;    
+}
+
+.bloc-form img {    
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: solid 2px white;
+    box-shadow: 5px 5px 10px #e7e3e3;
+}
+
+.bloc-form form table tr {
+    width: 100%;
+    justify-content: center;
+    align-items: center;    
+}
+
+.bloc-form form table tr label, p{
+    width: 100%;
+    display: block;
+    width: 80%;
+}
+
+.bloc-form form table tr td{
+    width: 50%;
+}
+
+.bloc-form textarea {
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: #EEF0F8;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.bloc-form select, input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #EEF0F8;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.bloc-form form table tr .error-text {
+    color: red;
+    font-size: 0.8em;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.etoile {
+    color: red;
+}
+
+.bloc-form .submit input {
+    width: 100px;
+    background-color: #82C4CA;
+    color: white;
+    padding: 0px;
+}
+
+.bloc-form .submit {
+    float: right;
+}
+

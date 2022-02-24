@@ -1,0 +1,35 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(226, 226, 235);
+    height: auto;
+    width: 100%;
+    align-items: center;
+    font-family: Tw Cen MT;
+    background-color: rgb(226, 226, 235);
+}
+html{
+    border-left: 2px solid #003147 ;
+}
+
+.container {
+    width: 88%;
+    height: auto;
+    border-radius: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 120px 4%;
+    padding: 2%;
+    background-color: #fff;
+}
+input{
+    width: 35%;
+    height: 32px;
+    border-radius: 14px;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 19px;
+    border: 0;
+}

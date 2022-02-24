@@ -1,0 +1,47 @@
+body, html {
+    background-color: #fff;
+    margin: 0;
+    height: 1000px;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: Tw Cen MT;
+    font-style: normal; }
+
+    .header{
+        display: flex;
+        width: 100%;
+        height: 150px;
+        border-top: 0.006px solid #fff;
+        background-color: #003147;
+      
+     
+        flex-direction: row;
+    }
+    .header .title{
+        font-size: 50px;
+        color: #f44336;
+        width: 88%;
+    
+    }
+
+    .header .uline{
+        border-radius: 100% 0% 0% 100%;  
+        width: 12%;
+        background-color: white;
+        height: auto;
+    }
+    .baner{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 13px;
+}
+.baner img{
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+}
+
+   
+

@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    padding: 0;
+    padding: 55px 0;    
+    width: 100%;
+    background: rgba(247, 244, 244, 0.3);
+}
+
+.container{
+    
+    width: 90%;    
+    padding: 1%;    
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(232, 241, 232, 0.3);
+    border-radius:0 0 10px 10px;    
+    /* border: 2px solid rgba(163, 57, 57, 0.3); */
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+form{
+    width: 100%;
+    background: rgba(248, 241, 241, 0.3);
+    justify-content: center;
+    align-items: center;
+    padding: 1%;    
+    border-radius: 10px;    
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.form-group{
+    width: 95%;
+    margin: 2%;    
+    text-align: center;
+}
+button{
+    width: 100%;    
+    height: 38px;
+    font-size: 20px;
+    padding: 2%;
+}
+.s_form{
+    width: 95%;
+    margin: 1%;  
+    padding: 1%;      
+    display: flex;
+}
+.time{
+    margin-top: -20px;
+}
+.time span:hover{
+    cursor: pointer;
+}
+i, span{
+    color: #fff;
+    margin: 1%;
+    font-weight: bold;    
+}
+.control{
+    border: 0;
+    width: 30px;
+    background-color: rgba(163, 57, 57, 0.3);
+    color: rgb(13, 122, 122);
+}
+.action{
+    padding-left: 25%;
+}
+
+input{
+    width: 25%;
+    margin: 1%;
+    font-size: 20px;  
+    font-weight: bold;        
+}
+
+.btn{
+    width: 30%;
+}
