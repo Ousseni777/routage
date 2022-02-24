@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 55px 0;    
+    width: 100%;
+    background: rgba(247, 244, 244, 0.3);
+}
+
+.container{
+    width: 95%;
+    margin-left: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    background: rgba(247, 244, 244, 0.3);
+     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+.meeting{
+    width: 98%;
+    margin:0 1% 5px 1%;
+    padding: 0.5%;
+    display: flex;
+    border-radius: 0 10px 10px 5px;
+    border-left: 5px solid blue;
+    /* border-right: 5px solid blue; */
+    background: rgba(255, 255, 255, 0.3);
+    
+    box-shadow: 0 1px 1px 0 rgba(153, 145, 145, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+   -webkit-box-shadow:  0 1px 1px 0 rgba(153, 145, 145, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+   -moz-box-shadow:  0 1px 1px 0 rgba(153, 145, 145, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.meeting:hover{
+    background-color: rgb(198, 233, 233);    
+}
+
+.s_title{
+    border-radius: 10px;
+    padding: 0.5%;
+    width: 24%;
+    text-align: center;
+    margin: 1% 0.5% 1% 0.5%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+.action{        
+    float: right;    
+    
+}
+
+.mtg_info{
+    width: 100%;
+    color: blue;
+}
+.s_title span{
+    font-size: 18px;
+    opacity: 1;
+
+}
+
+.label{
+    color: black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: brown;
+}

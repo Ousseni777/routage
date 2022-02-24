@@ -1,0 +1,68 @@
+body{
+    margin-top: 100px;
+}
+.sdk-select {
+    height: 34px;
+    border-radius: 4px;
+}
+form{
+    display: block;
+    background-color: #f6f8fa;
+     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:  0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-group{
+    /* visibility: hidden; */
+    width: 80%;
+    padding: 0.2%;
+    margin: 1%;
+    
+}
+
+input, select{
+    width: 40%;
+}
+label{
+    width: 30%;
+}
+
+.buttons {
+    width: 50%;
+    
+    position: absolute;
+    display: inline;
+    top: 20%;
+    right: 20px;    
+}
+input[type='sumit']{
+    padding: 20%;
+
+}
+
+#nav-tool {
+    margin-bottom: 0px;
+}
+
+#show-test-tool {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: block;
+    z-index: 99999;
+}
+
+
+
+
+#websdk-iframe {
+    width: 100%;    
+    border: 1px;
+    border-color: red;
+    border-style: dashed;    
+    margin: auto;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    margin: 0;
+}
