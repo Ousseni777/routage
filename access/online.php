@@ -23,11 +23,9 @@
     $sql_delete="DELETE FROM online WHERE times < $session_delete_time";
     $request_delete=mysqli_query($bdd,$sql_delete);
 
-    $sql_online="SELECT count(id) as nbr FROM online WHERE 1";
+    $sql_online="SELECT count(id) as nbr FROM online WHERE status='on'";
     $request=mysqli_query($bdd,$sql_online);
     $tab=mysqli_fetch_assoc($request);
-    $users_nbr_online=$tab['nbr'];
-    echo $users_nbr_online;
-        
+    $users_nbr_online=$tab['nbr'];    
 
 ?>
