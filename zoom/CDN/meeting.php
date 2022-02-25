@@ -98,7 +98,7 @@
                     <b>Sujet : <i style="font-size: 20px;">' . $topic . '</i> </b><br>			
                     <span>Participer à la réunion Zoom : ' . $link . '</span>
                     </body>	';
-        mail($table['email'], $subject, $message, $header);
+        mail($table['email'], $subject, $message, $header);        
     }
     function format($a){
         if($a<10)

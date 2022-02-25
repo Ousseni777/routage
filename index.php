@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/global_css.css">
+    <link rel="stylesheet" type="text/css" href="./global_css_mo.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./CSS/footercss.css">
     <title>home</title>
@@ -14,12 +14,14 @@
 
 <body id="ctrl">
 
-    <div class="banniere" id="navbar">
+   <div style="height: auto;width: auto;">
+   <div class="banniere" id="navbar">
+       
         <!--debut des liens de gauche-->
         <div class="gauche">
             <img src="IMG/innovlogo.jfif">
         </div>
-        <span class="mnbton"  onclick="openMenu()">&#9776;</span>
+        <span class="mnbton" onclick="openMenu()">&#9776;</span>
         <div class="droite" id="menuid">
             <span href="javascript:void(0)" class="mnbton" onclick="closeMenu()" id="back_button" style="position: absolute;position: absolute; right: 5vw; top: 5vh;border: 0;cursor:pointer;">&times;</span>
             <a href="./account/form_login.php" class="teacher">Login</a>
@@ -32,6 +34,8 @@
         </div>
     </div>
     <div class="header">
+    <video src="https://media.istockphoto.com/videos/lombok-waterfall-video-id135931235" muted loop autoplay></video>
+    <div class="overlay"></div>
         <div class="text">
             <h1 id="id_h1">WATER, ENERGY, FOOD NEXUS INNOVATION WEEK</h1>
             <h2>"Paving the way towards Entrepreneurship"
@@ -42,6 +46,7 @@
             <img src="./IMG/INNV.jfif" alt="logo SICOM">
         </div>
     </div>
+   </div>
     <div class="about">
 
         <h2>About the Event</h2>
@@ -224,10 +229,10 @@
 
             <div class="third">
                 <h3>Liens Utiles</h3>
-                <div>
+                <div >
                     <ul>
-                        <li><a href="https://fst-usmba.ac.ma/" style="text-decoration: none;color: #fff;font-size: clamp(1em,3vw,1.5em);font-weight: 400;">Go to fst.ma </a></li>
-                        <li><a href="http://elearning.usmba.ac.ma/" style="text-decoration: none;color: #fff;font-size: clamp(1em,3vw,1.5em);margin-top: 40px;font-weight: 400;">Go to usmba.ma </a></li>
+                        <li><a href="https://fst-usmba.ac.ma/" style="text-decoration: none;color: #fff;font-size: clamp(1em,3vw,1.5em);font-weight: 400;"><i>fst de fes</i> </a></li>
+                        <li><a href="http://elearning.usmba.ac.ma/" style="text-decoration: none;color: #fff;font-size: clamp(1em,3vw,1.5em);margin-top: 40px;font-weight: 400;"><i>université SMBA de fes </a></li>
                     </ul>
                 </div>
             </div>
@@ -235,7 +240,7 @@
         </div>
     </footer>
 
-    <div class="copyr" style="text-align: center;">@Copyright 2022 SicoM <div>
+    <div class="copyr" style="text-align: center;padding-bottom: 75px;">@Copyright &copy; 2022 SicoM <br>Tous droits Reservés <br><br><br> <a href="http://localhost/myProject/DEVELLOPED/index_dev.html" class="drt" style="position: absolute;right: 45%;text-decoration: none;padding-bottom: 35px;">Developped by : JRL & OB </a><div>
 
             <script>
                 var start = window.pageYOffset;

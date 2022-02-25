@@ -18,7 +18,7 @@
 
 
     if ($_POST) {
-        $bdd = mysqli_connect('localhost', 'root', '', 'sicom_innovation');
+        include('./connectToDB.php');
         extract($_POST);
         $sql = "SELECT * FROM `person` WHERE email='$email'";
         $resultat_sql = mysqli_query($bdd, $sql);
