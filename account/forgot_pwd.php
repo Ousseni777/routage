@@ -19,32 +19,39 @@
 
     if ($_POST) {
         include('./connectToDB.php');
-        extract($_POST);
-        $sql = "SELECT * FROM `person` WHERE email='$email'";
-        $resultat_sql = mysqli_query($bdd, $sql);
-        $resultat = mysqli_fetch_assoc($resultat_sql);
-        //Si le propriétaire n'existe pas on effectue des requetes SQL
-        if ($resultat) {
-            $header = 'From:"BORO OUSSENI"<boro7ousseni@gmail.com>' . "\n";
+        $header = 'From:"BORO OUSSENI"<boro7ousseni@gmail.com>' . "\n";
             $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
             $header .= 'Content-Transfer-Encoding: 8 bits\n';
             $header .= 'X-Mailer : PHP/' . phpversion();
             $subject = "Recover your password for SICOM INNOVATION";
-
-            $message = '		
-			<body>
-			<span> Hello  <i>' . $resultat["first_name"] . '  ' . $resultat["last_name"] . '</i></span><br>
-			<b>Suite à votre demande, vous trouverez ci-après vos paramètres d’accès à SICOM INNOVATION </b><br>
-			<b>Votre login  :</b> ' . $resultat['email'] . '<br>
-            <b>Votre mot de pass  :</b> ' . $resultat['mdp'] . '<br>
-			<i></i><h2>Cordialement</h2></i>
-			</body>		
-		';
+            $message="Bonjour";
+        extract($_POST);
             mail($email, $subject, $message, $header);
-            $info_request = true;
-        } else {
-            $info_request = false;
-        }
+        // $sql = "SELECT * FROM `person` WHERE email='$email'";
+        // $resultat_sql = mysqli_query($bdd, $sql);
+        // $resultat = mysqli_fetch_assoc($resultat_sql);
+        // //Si le propriétaire n'existe pas on effectue des requetes SQL
+        // if ($resultat) {
+        //     $header = 'From:"BORO OUSSENI"<boro7ousseni@gmail.com>' . "\n";
+        //     $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
+        //     $header .= 'Content-Transfer-Encoding: 8 bits\n';
+        //     $header .= 'X-Mailer : PHP/' . phpversion();
+        //     $subject = "Recover your password for SICOM INNOVATION";
+
+        //     $message = '		
+		// 	<body>
+		// 	<span> Hello  <i>' . $resultat["first_name"] . '  ' . $resultat["last_name"] . '</i></span><br>
+		// 	<b>Suite à votre demande, vous trouverez ci-après vos paramètres d’accès à SICOM INNOVATION </b><br>
+		// 	<b>Votre login  :</b> ' . $resultat['email'] . '<br>
+        //     <b>Votre mot de pass  :</b> ' . $resultat['mdp'] . '<br>
+		// 	<i></i><h2>Cordialement</h2></i>
+		// 	</body>		
+		// ';
+        //     mail($email, $subject, $message, $header);
+        //     $info_request = true;
+        // } else {
+        //     $info_request = false;
+        // }
     }
 
     ?>
